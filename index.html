@@ -47,27 +47,10 @@
                 </section>
 
                 <section id="alarms">
-                    <!-- <section class="alarms" id="alarm-${alarmList.length}">
-                        <section class="alarmTime">
-                            <h1>23:57 AM</h1>
-                            <h4 class="remaining-time">Alarm in 7 hours 57 minutes</h4>
-                        </section>
-
-                        <section class="set-unset">
-                            <section class="toggleButton" id="toggleButton-${alarmList.length}" onclick="moveToggle(this.id)">
-                                <section class="circle">
-                                </section>
-                            </section>
-                        </section>
-
-                        <section class="deleteAlarm">
-                            <button class="delete">Delete</button>
-                        </section>
-                    </section> -->
 
                 </section>
                 
-
+                
                 <section id="add-alarm-box" class="add-alarm-box">
                     <section id="input-section">
                         <section class="inputs">
@@ -108,9 +91,7 @@
     </section>
 
     <script>
-        // var addA = document.getElementById("add-alarm-button");
         let addAlarmBox = document.getElementById("add-alarm-box");
-        // let toggleBtn = document.
 
 
         function moveToggle(id){
@@ -119,11 +100,13 @@
             if(styling.flexDirection == "row"){
                 buttonObj.classList.add("move-toggle");
                 buttonObj.classList.remove("toggleButton");
+                unsetAlarm(id);
             }
 
             else{
                 buttonObj.classList.remove("move-toggle");
                 buttonObj.classList.add("toggleButton");
+                setAlarm2(id);
             }
             
         }
