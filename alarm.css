@@ -244,6 +244,19 @@
 
 }
 
+.ringingHeading{
+    font-size: 3vw;
+    color:white;
+}
+
+.ringingSubHeading{
+    font-weight:400;
+    font-size: 2vw;
+    padding: 4px 0px;
+    /* color: #bfbfbf; */
+    color: white;
+}
+
 .alarmDeactivatedH1{
     /* padding: 10px 0px;
     width: 70%; */
@@ -309,6 +322,21 @@
 .alarms .deleteAlarm{
     padding: 3% 4% 2% 3%;
     width: 15%;
+}
+
+.stop-alarm, .snooze-alarm{
+    padding: 3% 4% 2% 3%;
+    width: 15%;
+}
+
+.stop-button, .snooze-button{
+    padding: 0.9vmax 1vmax;
+    border-radius: 1.5vmax;
+    border: 1px solid grey;
+    background-color: #e2e2e2;
+    font-size: 3vmin;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .deleteAlarm button{
