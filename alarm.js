@@ -9,6 +9,7 @@ noAlarmBox = document.querySelector(".no-alarm-box");
 let alarmList = [];
 let setAlarmsList = [];
 let deletedAlarmsList = [];
+let ringingAlarmsList = [];
 let id = 0;
 for (let i = 12; i > 0; i--) {
     i = i < 10 ? `0${i}` : i;
@@ -27,12 +28,18 @@ for (let i = 2; i > 0; i--) {
 }
 
 
+
+
 setInterval(() => {
     let date = new Date(),
     h = date.getHours(),
     m = date.getMinutes(),
     s = date.getSeconds(),
+    h1 = h;
+    m1 = m;
+    
     ampm = "AM";
+    ap1 = ampm;
     if(h >= 12) {
         h = h - 12;
         ampm = "PM";
@@ -52,8 +59,18 @@ setInterval(() => {
         // console.log(timeComp[0]);
         if(timeComp[0].textContent == `${h}:${m} ${ampm}`){
             console.log(`Alarm ringing for ${h}:${m} ${ampm}`);
+            let temporary = setAlarmsList[i];
+            setAlarmsList[i] = setAlarmsList[setAlarmsList.length -1];
+            setAlarmsList[setAlarmsList.length -1] = temporary;
+
+            setAlarmsList.pop();
+            ringingAlarmsList.push(temporary);
+            console.log(ringingAlarmsList)
+            console.log(setAlarmsList);
+            ringAlarm(temporary, timeComp[0].textContent);
         }
 
+        else{
         let timeRemain = alarmEle.getElementsByTagName("h4");
         let hours1, minutes1, ampm1;
         hours1 = parseInt(timeComp[0].textContent.substring(0,2));
@@ -73,24 +90,54 @@ setInterval(() => {
             }
         }
 
-        let remHours = hours1 - h;
-        let remMins = minutes1 - m;
+        let remHours = hours1 - parseInt(h1);
+        let remMins = minutes1 - parseInt(m1);
 
-        if(remHours < 0){
-            remHours = remHours +  12;
+        console.log(remHours, remMins);
+
+        if(remHours == 0 && remMins == 0){
+            remHours = 0;
+            remMins = 0;
         }
-
-        if(remMins < 0){
+        else if(remHours == 0 && remMins < 0){
             remMins = remMins +  60;
-            remHours = remHours - 1;
+            remHours = remHours + 23;
         }
+
+        else{
+            if(remHours < 0){
+                remHours = remHours + 24;
+            }
+    
+            if(remMins < 0){
+                remMins = remMins +  60;
+                remHours = remHours - 1;
+            }
+
+        }
+
+        
+
+        
 
         timeRemain[0].innerHTML = `Alarm in ${remHours} hours ${remMins} minutes`;
 
         if(timeRemain[0].innerHTML== `Alarm in 0 hours 0 minutes`){
-            
-            timeRemain[0].style.visibility="hidden";
+
+            // timeRemain[0].style.visibility="hidden";
+            let temporary = setAlarmsList[i];
+            setAlarmsList[i] = setAlarmsList[setAlarmsList.length -1];
+            setAlarmsList[setAlarmsList.length -1] = temporary;
+
+            setAlarmsList.pop();
+            ringingAlarmsList.push(temporary);
+            console.log(ringingAlarmsList)
+            ringAlarm(temporary, timeComp[0].textContent);
+
+
         }
+
+    }
 
 
 
@@ -103,6 +150,70 @@ setInterval(() => {
     //     ringtone.loop = true;
     // }
 }, 1000);
+
+function ringAlarm(id, content){
+        console.log("here");
+        // console.log(setAlarmListLen);
+        let ringingAlarmEle = document.getElementById(`alarm-${id}`);
+        console.log("ringinggg..");
+        // console.log(ringingElement.innerHTML)
+
+        let previousHtml = ringingAlarmEle.innerHTML;
+        console.log(previousHtml);
+        let argument = id + "#" + previousHtml;
+        console.log(argument);  
+        ringingAlarmEle.innerHTML = `<section class="alarmTime">
+                                        <h1 class="ringingHeading">${content}</h1>
+                                        <h4 class="ringingSubHeading">Alarm Ringing...</h4>
+                                    </section>
+
+                                    <section class="stop-alarm">
+                                        <button class="stop-button" id="stopButton-${id}" onclick= "stopAlarm(${id})"> STOP ALARM </button>
+                                    </section>
+
+                                    <section class="snooze-alarm">
+                                        <button class="snooze-button" id="snoozeButton-${id}" onClick= "snoozeAlarm(${id})">SNOOZE ALARM</button>
+                                    </section>`
+}
+
+function stopAlarm(id){
+    
+    console.log("here1");
+    // let pos = argument.indexOf("#");
+
+    // let id = argument.substring(0, pos);
+    // console.log(id);
+    // let previousHtml = argument.substring(pos+1);
+    // console.log(previousHtml);
+    let ringingAlarmEle = document.getElementById(`alarm-${id}`);
+    let heading1Element = ringingAlarmEle.getElementsByTagName("h1");
+    let time = heading1Element[0].innerHTML;
+
+    let previousHtml = `<section class="alarmTime">
+                            <h1 class="activatedH1">${time}</h1>
+                            <h4 class="remaining-time activatedH4">Deactivated</h4>
+                        </section>
+
+                        <section class="set-unset">
+                            <section class="toggleButton" id="toggleButton-${id}" onclick="moveToggle(this.id)">
+                                <section class="circle">
+                                </section>
+                            </section>
+                        </section>
+
+                        <section class="deleteAlarm">
+                            <button class="delete" id="delAlrmBtn-${id}" onclick="deleteAlarm(this.id)">Delete</button>
+                        </section>`
+    
+    ringingAlarmEle.innerHTML = previousHtml;
+    let buttonObj = document.getElementById("toggleButton-" + id);
+    let styling = getComputedStyle(buttonObj);
+    if(styling.flexDirection == "row"){
+        buttonObj.classList.add("move-toggle");
+        buttonObj.classList.remove("toggleButton");
+    }
+    unsetAlarm("toggleButton-" + id);
+}
 
 function setAlarm() {
     let time = `${selectionMenu[0].value}:${selectionMenu[1].value} ${selectionMenu[2].value}`;
@@ -134,7 +245,7 @@ function setAlarm() {
     sectionAlarms.innerHTML += `<section class="alarms" id="alarm-${id}">
                                     <section class="alarmTime">
                                         <h1 class="activatedH1">${time}</h1>
-                                        <h4 class="remaining-time activatedH4">Alarm in 7 hours 57 minutes</h4>
+                                        <h4 class="remaining-time activatedH4">Alarm in 0 hours 0 minutes</h4>
                                     </section>
 
                                     <section class="set-unset">
@@ -188,11 +299,13 @@ function unsetAlarm(id){
         return id1 == mainIdInt;
     }
 
+    if(indexFound >= 0){
     let temp = setAlarmsList[indexFound];
     setAlarmsList[indexFound] = setAlarmsList[setAlarmsList.length-1];
     setAlarmsList[setAlarmsList.length-1] = temp;
 
     setAlarmsList.pop();
+    }
 
     console.log(setAlarmsList);
 
@@ -251,6 +364,8 @@ function deleteAlarm(id){
     function findIndexFunc2(id1){
         return id1["alarmObjId"] == mainIdInt;
     }
+
+
     let tempEle = alarmList[indexFound2];
     alarmList[indexFound2] = alarmList[alarmList.length -1];
     alarmList[alarmList.length -1] = tempEle;
