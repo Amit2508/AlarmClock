@@ -1,0 +1,98 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+* h1{
+    color: black;
+    letter-spacing: 0.25em;
+}
+
+
+#nav-bar{
+    display: flex;
+    align-items: center;
+    background-color: rgb(160, 157, 157);
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+}
+
+#nav-bar #app-text{
+    
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px 10px 1vw;
+    /* background-color: white; */
+
+
+}
+
+#nav-bar #app-text a{
+    border-right: 2px solid #e2e2e2;
+    padding-right: 1.5vw;
+    letter-spacing: 0.25em;
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: #e2e2e2;
+}
+
+
+
+#nav-bar #nav-section{
+    display: flex;
+    flex-direction: row-reverse;
+    /* padding-left: 20%; */
+    /* background-color: brown; */
+    padding-right: 5vw;
+    width: 80%;
+}
+
+#nav-bar #nav-section #nav-ul{
+    /* background-color: black; */
+    display: flex;
+    /* flex-direction: column-reverse; */
+    list-style: none;
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    align-items: center;
+    /* width: 30vw; */
+    /* padding-left: 25vw;
+    padding-right: 7vw; */
+    /* background-color: red; */
+    
+}
+
+#nav-ul li{
+    margin: 6px 1vw;
+    /* position: relative; */
+    /*  */
+    /* right: 5vw; */
+}
+
+#nav-ul li a{
+    padding: 3px 1.5vw 2px 1.5vw;
+    font-size: 1.7vw;
+    color: #e2e2e2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#nav-ul li a:hover{
+    color: rgb(21, 84, 172);
+    text-decoration: underline;
+}
+
+#main-body{
+    /* position: relative;
+    top: 9vh; */
+    background-color: red;
+    /* height: 80vh; */
+}
+
+#main-body h1{
+    /* font-size: 10rem; */
+}
