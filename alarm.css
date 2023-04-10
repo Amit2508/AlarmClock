@@ -55,23 +55,12 @@
 #nav-bar #nav-section #nav-ul{
     /* background-color: black; */
     display: flex;
-    /* flex-direction: column-reverse; */
     list-style: none;
-    /* justify-content: space-between; */
-    /* justify-content: space-around; */
     align-items: center;
-    /* width: 30vw; */
-    /* padding-left: 25vw;
-    padding-right: 7vw; */
-    /* background-color: red; */
-    
 }
 
 #nav-ul li{
     margin: 6px 1vw;
-    /* position: relative; */
-    /*  */
-    /* right: 5vw; */
 }
 
 #nav-ul li a{
@@ -92,10 +81,6 @@
     top: 9vh; */
     padding: 15vh 2vw 25vh 2vw;
     background-color: rgb(81, 78, 78) ;
-    /* height: max-content; */
-    /* height: 100vh; */
-    /* height: max-content; */
-    /* height: 50vh; */
     height: max-content;
     min-height: 60vh;
     /* height: max(100vh, inherit ); */
@@ -139,6 +124,20 @@
 
 #add-alarm-button:hover{
     color: white;
+}
+
+.no-alarm-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 100vw;
+}
+
+.no-alarm-box h1{
+    color:#676a6a;
+    font-size: 5vmax;
+    letter-spacing: 0.15em;
 }
 
 .add-alarm-box{
@@ -188,6 +187,10 @@
 
 .ok-button{
     padding-top: 2vmin;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
 }
 
 .ok-button button{
@@ -212,9 +215,109 @@
 
 }
 
+.alarms{
+    height: max-content;
+    /* min-height: 15vh; */
+    width: 90vw;
+    padding: 5vh 2vw;
+    border-bottom: 1px solid white;
+    background-color: #676a6a;
+    display: flex;
+}
 
+.alarms .alarmTime{
+    padding: 10px 0px;
+    width: 70%;
+}
 
+.activatedH1{
+    font-size: 4vw;
+    color:white;
+}
 
-/* #main-body h1{
-    font-size: 10rem;
-} */
+.activatedH4{
+    font-weight:400;
+    font-size: 1.5vw;
+    padding: 4px 0px;
+    /* color: #bfbfbf; */
+    color: white;
+
+}
+
+.alarmDeactivatedH1{
+    /* padding: 10px 0px;
+    width: 70%; */
+    color: #bfbfbf;
+    font-size: 4vw;
+}
+
+.alarmDeactivatedH4{
+    /* padding: 10px 0px;
+    width: 70%; */
+    color: #bfbfbf;
+    font-weight:400;
+    font-size: 1.5vw;
+    padding: 4px 0px;
+}
+
+.alarms .set-unset{
+    padding: 3% 4% 2% 3%;
+    width: 15%;
+    
+}
+
+.set-unset .toggleButton{
+    height: 1.4vmax;
+    width: 5.3vmax;
+    background-color: blue;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    padding: 0.7vmax 0.5vmax;
+    cursor: pointer;
+    display: flex;
+    /* transition: flex-direction 2s; */
+    transition-property: flex-direction;
+    transition-duration: 2s; 
+}
+
+.set-unset .toggleButton:hover{
+    background-color: rgb(19, 19, 165);
+}
+
+.circle{
+    height: 1.5vmax;
+    width: 1.5vmax;
+    border-radius: 100%;
+    background-color: white;
+    position: relative;
+}
+
+.move-toggle{
+    display: flex;
+    padding: 0.7vmax 0.5vmax;
+    cursor: pointer;
+    border-radius: 25px;
+    flex-direction: row-reverse;
+    transition-property: flex-direction;
+    transition-duration: 2s;
+    background-color: rgb(46, 45, 45);
+    height: 1.4vmax;
+    width: 5.3vmax;
+}
+
+.alarms .deleteAlarm{
+    padding: 3% 4% 2% 3%;
+    width: 15%;
+}
+
+.deleteAlarm button{
+    padding: 0.9vmax 1vmax;
+    border-radius: 1.5vmax;
+    border: 1px solid grey;
+    background-color: #e2e2e2;
+    font-size: 3vmin;
+    font-weight: bold;
+    cursor: pointer;
+}
+
