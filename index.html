@@ -1,110 +1,188 @@
-<!DOCTYPE html> 
-<!-- to indicate to browser that it is a html file -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<!-- to do title -->
-	<title>Five tips for frontend development</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<!-- <style type="text/css">
-		
-		p{
-			color: blueviolet;
-		}
-	</style> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <link rel="stylesheet" href="../styles/alarm.css">
 </head>
 <body>
+    <nav id="nav-bar">
+        <!-- <section id="img-section">
+           <a href=""><i class="fa-solid fa-clock" style="color: #dcd9d9;"></i></a> 
+        </section> -->
 
-	<!-- Audio and video -->
-	<audio src="static/audio.mp3" controls></audio>
-		<br>
-	<video height="200" width ="200" src="static/video.mp4" controls>
-		
-	</video>
+        <section id="app-text">
+            <a>CLOCK APP</a>
+        </section>
 
-	<figure>
-		<img height="200" width ="200" src="static/cn.jpeg">
-		<figcaption>Logo image</figcaption>
-	</figure>
+        <section id="nav-section">
+            <ul id="nav-ul">
+                <li class="nav-items" id="alarm-page">
+                    <a href="alarm.html">Alarm</a>
+                </li>
+                <!-- <li class="nav-items" id="stopwatch-page">
+                    <a href="/">Stopwatch</a>
+                </li>
+                <li class="nav-items" id="timer-page">
+                    <a href="/">Timer</a>
+                </li> -->
+            </ul>
+        </section>
 
-	<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/BcfBRmaahYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+    </nav>
 
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/aC0ais5QTwk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-	<!-- header
-		logo -->
-		<img src="static/blog-logo.png">
-		<!-- website link -->
 
-		<h3>
-			<a href="https://www.google.com/">
+    
 
-	Google </a></h3>
-		<!-- header image -->
-		<img src="static/cn.jpeg"
+    <section id="main-body">
+        <section id="alarm-section">
+            <section id="disp-no-alarm">
 
-		width="80%">
-	<!-- main -->
-		<!-- blog heading -->
-		<h1> Five tips for front end development
-		</h1>
-		<!-- blog image -->
-		<img src="static/Five-tips-for-front-end-web-development.jpg">
-		<!-- content -->
-		<p >
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-			</p>
-			<!-- <br> -->
-			<p>
-				It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-			</p>
-			pargarph
-			1
-			<!-- paragraph
-			list -->
-			<ol>
-				<li>
-					<h4> Commenting </h4>
-					<p>
-						Sometimes source code contains a novel or noteworthy solution to a specific problem. In such cases, comments may contain an explanation of the methodology. Such explanations may include diagrams and formal mathematical proofs. This may constitute explanation of the code, rather than a clarification of its intent; but others tasked with maintaining the code base may find such explanation crucial. This might especially be true in the case of highly specialized problem domains; or rarely used optimizations, constructs or function-calls
-					</p>
-				</li>
-				<li>
-					<h4> Invest in productive tools </h4>
-					<p>
-						An instance in which the price to earnings ratio has a lesser significance is when companies in different industries are compared. For example, although it is reasonable for a telecommunications stock to show a P/E in the low teens, in the case of hi-tech stock, a P/E in the 40s range is not unusual. When making comparisons, the P/E ratio can give you a refined view of a particular stock valuation.
-					</p>
-				</li>
-				<li>
-					<h4>
-						Always be curious
-					</h4>
-					<p>
-						An instance in which the price to earnings ratio has a lesser significance is when companies in different industries are compared. For example, although it is reasonable for a telecommunications stock to show a P/E in the low teens, in the case of hi-tech stock, a P/E in the 40s range is not unusual. When making comparisons, the P/E ratio can give you a refined view of a particular stock valuation.
-					</p>
-					<ul type =" circle">
-		<li> 
-<a href="https://frontendfoc.us/" target="_blank"> Frontend focus</a></li>
-		<li>CSS weekly</li>
-		<li> JS weekly</li>
-		<li>web design weekly </li>
-	
+                <section class="no-alarm-box">
+                    <h1 class="no-alarm-heading">
+                        There are no alarms yet!
+                    </h1>
+                </section>
 
-	</ul></li>
-				
-				<li>
-					<h4>Refactor ur code from time to time
-					</h4>
-					<p>
-By “refactoring” your code, you’re only enhancing the code without tampering with its functionality. This will improve the quality and readability quotient of your code and the more often you do it, your code will continually be updated into a cleaner and fresher version of what it was before. Apart from that, one of the most significant advantages that refactoring offers is that it ensures your code remains free from plagiarism
-					</p>
-				</li>
-				<li>
-					<h4> Learning Command Line Is The Way To Go. </h4>
-					<p> 
-It is a standard convention among developers to use GUI tools to power the terminal. What most of them don’t realize is that by doing so, they end up spending a significant portion of their valuable time in handling GUI tools than making progress on the terminal. The right way to go about it is learning the command line. Start with the basics of the command line and advance to higher levels as you go, and you’ll find that you can complete several tasks with much more ease and efficiency with command line tools than with GUI tools. Moreover, automating the terminal with appropriate commands is a great way to save time and energy.</p>
-				</li>
-			</ol>
-			<!-- ending -->
-			<!-- paragraphh -->
+                <section id="alarms">
+                    <!-- <section class="alarms" id="alarm-${alarmList.length}">
+                        <section class="alarmTime">
+                            <h1>23:57 AM</h1>
+                            <h4 class="remaining-time">Alarm in 7 hours 57 minutes</h4>
+                        </section>
 
+                        <section class="set-unset">
+                            <section class="toggleButton" id="toggleButton-${alarmList.length}" onclick="moveToggle(this.id)">
+                                <section class="circle">
+                                </section>
+                            </section>
+                        </section>
+
+                        <section class="deleteAlarm">
+                            <button class="delete">Delete</button>
+                        </section>
+                    </section> -->
+
+                </section>
+                
+
+                <section id="add-alarm-box" class="add-alarm-box">
+                    <section id="input-section">
+                        <section class="inputs">
+                            <select>
+                                <option value="Hour" selected disabled hidden>00</option>
+                            </select>
+                        </section>
+    
+                        <section class="inputs">
+                            <select>
+                                <option value="Minute" selected disabled hidden>00</option>
+                              </select>
+                        </section>
+    
+                        <section class="inputs">
+                            <select>
+                                <option value="AM/PM" selected disabled hidden>AM</option>
+                              </select>
+                        </section>
+                    </section>
+
+                    <section class="ok-button">
+                        <button id="ok" onclick="closeAddAlarm()">SET</button>
+                        <button id="cancel" onclick="closeAddAlarm()">CANCEL</button>
+                    </section>
+                    
+                </section>
+
+                
+            </section>
+        </section>
+    </section>
+
+    <section id="footer">
+        <section id="add-alarm">
+            <button id="add-alarm-button" onclick="openAddAlarm()">ADD ALARM</button>
+        </section>
+    </section>
+
+    <script>
+        // var addA = document.getElementById("add-alarm-button");
+        let addAlarmBox = document.getElementById("add-alarm-box");
+        // let toggleBtn = document.
+
+
+        function moveToggle(id){
+            let buttonObj = document.getElementById(id);
+            let styling = getComputedStyle(buttonObj);
+            if(styling.flexDirection == "row"){
+                buttonObj.classList.add("move-toggle");
+                buttonObj.classList.remove("toggleButton");
+            }
+
+            else{
+                buttonObj.classList.remove("move-toggle");
+                buttonObj.classList.add("toggleButton");
+            }
+            
+        }
+
+        function openAddAlarm() {
+            console.log("open clicked");
+            let date = new Date(),
+            h = date.getHours(),
+            m = date.getMinutes(),
+            s = date.getSeconds(),
+            ampm = "AM";
+            if(h >= 12) {
+                h = h - 12;
+                ampm = "PM";
+            }
+            h = h == 0 ? h = 12 : h;
+            h = h < 10 ? "0" + h : h;
+            m = m < 10 ? "0" + m : m;
+            s = s < 10 ? "0" + s : s;
+
+            let listInputs = document.querySelectorAll(".inputs");
+            let options1List = listInputs[0].getElementsByTagName("option");
+
+            for(let i = 0; i< options1List.length; i++){
+                if(options1List[i]["value"] == h){
+                    // console.log(options1List[i]["value"]);
+                    options1List[i]["selected"] = true;
+                }
+            }
+
+            let options2List = listInputs[1].getElementsByTagName("option");
+
+            for(let i = 0; i< options2List.length; i++){
+                if(options2List[i]["value"] == m){
+                    // console.log(options1List[i]["value"]);
+                    options2List[i]["selected"] = true;
+                }
+            }
+
+            let options3List = listInputs[2].getElementsByTagName("option");
+
+            for(let i = 0; i< options3List.length; i++){
+                if(options3List[i]["value"] == ampm){
+                    // console.log(options1List[i]["value"]);
+                    options3List[i]["selected"] = true;
+                }
+            }
+            
+            addAlarmBox.classList.add("open-add-alarm");
+        }
+        
+        function closeAddAlarm() {
+            console.log("closed clicked");
+
+            addAlarmBox.classList.remove("open-add-alarm");
+        }
+    </script>
+
+    <script src="../scripts/alarm.js"></script>
+    
 </body>
 </html>
