@@ -4,7 +4,7 @@ setAlarmButton = document.querySelector("#ok");
 sectionAlarms = document.querySelector("#alarms");
 noAlarmBox = document.querySelector(".no-alarm-box");
 // let alarmTime, isAlarmSet,
-// ringtone = new Audio("./files/ringtone.mp3");
+ringtone = new Audio('../ringtone/alarm-tone.mp3');
 
 let alarmList = [];
 let setAlarmsList = [];
@@ -153,6 +153,8 @@ setInterval(() => {
 
 function ringAlarm(id, content){
         console.log("here");
+        ringtone.play();
+        ringtone.loop = true;
         // console.log(setAlarmListLen);
         let ringingAlarmEle = document.getElementById(`alarm-${id}`);
         console.log("ringinggg..");
@@ -179,6 +181,7 @@ function ringAlarm(id, content){
 function stopAlarm(id){
     
     console.log("here1");
+    ringtone.pause();
     // let pos = argument.indexOf("#");
 
     // let id = argument.substring(0, pos);
