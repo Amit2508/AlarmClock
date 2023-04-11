@@ -4,7 +4,7 @@ setAlarmButton = document.querySelector("#ok");
 sectionAlarms = document.querySelector("#alarms");
 noAlarmBox = document.querySelector(".no-alarm-box");
 // let alarmTime, isAlarmSet,
-ringtone = new Audio('../ringtone/alarm-tone.mp3');
+ringtone = new Audio('../ring-tone/ring-tone.mp3');
 
 let alarmList = [];
 let setAlarmsList = [];
