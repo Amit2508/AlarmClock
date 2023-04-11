@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alarm</title>
-    <link rel="stylesheet" href="alarm.css">
+    <link rel="stylesheet" href="../styles/alarm.css">
 </head>
 <body>
     <nav id="nav-bar">
@@ -51,33 +51,7 @@
                 </section>
                 
                 
-                <section id="add-alarm-box" class="add-alarm-box">
-                    <section id="input-section">
-                        <section class="inputs">
-                            <select>
-                                <option value="Hour" selected disabled hidden>00</option>
-                            </select>
-                        </section>
-    
-                        <section class="inputs">
-                            <select>
-                                <option value="Minute" selected disabled hidden>00</option>
-                              </select>
-                        </section>
-    
-                        <section class="inputs">
-                            <select>
-                                <option value="AM/PM" selected disabled hidden>AM</option>
-                              </select>
-                        </section>
-                    </section>
-
-                    <section class="ok-button">
-                        <button id="ok" onclick="closeAddAlarm()">SET</button>
-                        <button id="cancel" onclick="closeAddAlarm()">CANCEL</button>
-                    </section>
-                    
-                </section>
+                
 
                 
             </section>
@@ -85,6 +59,33 @@
     </section>
 
     <section id="footer">
+        <section id="add-alarm-box" class="add-alarm-box">
+            <section id="input-section">
+                <section class="inputs">
+                    <select>
+                        <option value="Hour" selected disabled hidden>00</option>
+                    </select>
+                </section>
+
+                <section class="inputs">
+                    <select>
+                        <option value="Minute" selected disabled hidden>00</option>
+                      </select>
+                </section>
+
+                <section class="inputs">
+                    <select>
+                        <option value="AM/PM" selected disabled hidden>AM</option>
+                      </select>
+                </section>
+            </section>
+
+            <section class="ok-button">
+                <button id="ok" onclick="closeAddAlarm()">SET</button>
+                <button id="cancel" onclick="closeAddAlarm()">CANCEL</button>
+            </section>
+            
+        </section>
         <section id="add-alarm">
             <button id="add-alarm-button" onclick="openAddAlarm()">ADD ALARM</button>
         </section>
@@ -165,7 +166,7 @@
         }
     </script>
 
-    <script src="alarm.js"></script>
+    <script src="../scripts/alarm.js"></script>
     
 </body>
 </html>
