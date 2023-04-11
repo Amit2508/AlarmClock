@@ -150,7 +150,7 @@ setInterval(() => {
 
 function checkRinging(){
     if(numAlarmsRinging == 1){
-        ringtoneObjArray = new Audio('../ringtone/alarm-tone.mp3');
+        ringtoneObjArray = new Audio('../alarm-tone/alarm-tone.mp3');
         console.log("here");
         ringtoneObjArray.play();
         
