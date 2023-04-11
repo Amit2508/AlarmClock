@@ -141,12 +141,12 @@
 }
 
 .add-alarm-box{
-    top: 30vh;
+    bottom: 20vh;
     position: absolute;
-    left: 50vw;
+    left: 20vw;
     visibility: hidden;
     transform: translate(-50%, -50%) scale(0.1);
-    transition: transform 0.4s, top 0.4s;
+    transition: transform 0.4s, top 0.4s; 
     background-color: rgb(160, 157, 157) ;
     height: 50vh;
     width: 60vw;
@@ -211,7 +211,9 @@
 .open-add-alarm{
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
-    top: 50vh;
+    bottom: 0vh;
+    /* right: 40vw; */
+    left: 50vw;
 
 }
 
@@ -348,3 +350,4 @@
     font-weight: bold;
     cursor: pointer;
 }
+
