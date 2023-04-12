@@ -1,10 +1,40 @@
 inputSection = document.querySelector("#input-section"),
-selectionMenu = document.querySelectorAll("select"),
+selectionMenu = inputSection.querySelectorAll("select"),
 setAlarmButton = document.querySelector("#ok");
 sectionAlarms = document.querySelector("#alarms");
 noAlarmBox = document.querySelector(".no-alarm-box");
+
+mainSettings = document.querySelector("#main-settings");
+selectionMenu2 = mainSettings.querySelectorAll("select");
+
+let option1 = `<option value="alarm-tone-1">alarm-tone-1</option>`;
+selectionMenu2[0].firstElementChild.insertAdjacentHTML("afterend", option1);
+let option2 = '<option value="alarm-tone-2">alarm-tone-2</option>';
+selectionMenu2[0].firstElementChild.insertAdjacentHTML("afterend", option2);
+let option3 = '<option value="alarm-tone-3">alarm-tone-3</option>';
+selectionMenu2[0].firstElementChild.insertAdjacentHTML("afterend", option3);
+
+option1list = selectionMenu2[0].getElementsByTagName['option'];
+console.log(option1list)
+
+option2list = selectionMenu2[1].getElementsByTagName['option'];
+
+for (let i = 4; i >= 1; i--) {
+    i = i < 10 ? `0${i}` : i;
+    let option = `<option value="${i}">${i} minutes</option>`;
+    selectionMenu2[1].firstElementChild.insertAdjacentHTML("beforebegin", option);
+}
+
+for (let i = 6; i <= 30; i++) {
+    i = i < 10 ? `0${i}` : i;
+    let option = `<option value="${i}">${i} minutes</option>`;
+    selectionMenu2[1].lastElementChild.insertAdjacentHTML("afterend", option);
+}
+
+
+
 // let alarmTime, isAlarmSet,
-ringtone = new Audio('../alarm-tone/alarm-tone.mp3');
+ringtone = new Audio('alarm-tone/alarm-tone.mp3');
 
 let alarmList = [];
 let setAlarmsList = [];
@@ -150,7 +180,7 @@ setInterval(() => {
 
 function checkRinging(){
     if(numAlarmsRinging == 1){
-        ringtoneObjArray = new Audio('../alarm-tone/alarm-tone.mp3');
+        ringtoneObjArray = new Audio(`../ringtone/${selectionMenu2[0].value}.mp3`);
         console.log("here");
         ringtoneObjArray.play();
         
@@ -206,10 +236,27 @@ function snoozeAlarm(id){
     let ringingAlarmEle = document.getElementById(`alarm-${id}`);
     let heading1Element = ringingAlarmEle.getElementsByTagName("h1");
     let time = heading1Element[0].innerHTML;
-    let d = new Date(2023, 4, 11, parseInt(time.substring(0, 2)), parseInt(time.substring(3, 5)));
-    // let d = new Date(2023, 4, 11, 12, 56);
+    // let hours1, minutes1, ampm1;
+    // hours1 = parseInt(time.substring(0,2));
+    // minutes1 = parseInt(time.substring(3,5));
+    // ampm1 = time.substring(6);
+
+    // if(ampm1 == "AM") {
+    //     if(hours1 == 12){
+    //         hours1 = 0;
+    //     }
+
+    // }
+
+    // else if(ampm1== "PM"){
+    //     if(hours1 >=1 && hours1< 12){
+    //         hours1 = hours1 + 12;
+    //     }
+    // }
+    // let d = new Date(2023, 4, 11, hours1, minutes1);
+    let d = new Date();
     console.log(d);
-    d.setMinutes(d.getMinutes()+ 1);
+    d.setMinutes(d.getMinutes()+ parseInt((selectionMenu2[1].value).substr(0,2)));
     console.log(d);
 
     h = d.getHours(),
@@ -302,6 +349,7 @@ function stopAlarm(id){
 }
 
 function setAlarm() {
+    console.log(selectionMenu);
     let time = `${selectionMenu[0].value}:${selectionMenu[1].value} ${selectionMenu[2].value}`;
     console.log(time);
     
