@@ -34,7 +34,7 @@ for (let i = 6; i <= 30; i++) {
 
 
 // let alarmTime, isAlarmSet,
-ringtone = new Audio('AlarmClock.github.io/ringtone/alarm-tone.mp3');
+ringtone = new Audio('ringtone/alarm-tone.mp3');
 
 let alarmList = [];
 let setAlarmsList = [];
@@ -180,7 +180,7 @@ setInterval(() => {
 
 function checkRinging(){
     if(numAlarmsRinging == 1){
-        ringtoneObjArray = new Audio(`../ringtone/${selectionMenu2[0].value}.mp3`);
+        ringtoneObjArray = new Audio('ringtone/alarm-tone.mp3');
         console.log("here");
         ringtoneObjArray.play();
         
