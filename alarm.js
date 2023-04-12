@@ -34,7 +34,7 @@ for (let i = 6; i <= 30; i++) {
 
 
 // let alarmTime, isAlarmSet,
-ringtone = new Audio('ringtone/alarm-tone.mp3');
+ringtone = new Audio('AlarmClock.github.io/ringtone/alarm-tone.mp3');
 
 let alarmList = [];
 let setAlarmsList = [];
