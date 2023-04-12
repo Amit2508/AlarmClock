@@ -20,7 +20,8 @@
         <section id="nav-section">
             <ul id="nav-ul">
                 <li class="nav-items" id="alarm-page">
-                    <a href="alarm.html">Alarm</a>
+                    <button id="alarm-settings" onclick="openAlarmSettings()">Alarm Settings</button>
+                    <!-- <a href="alarm.html">Alarm</a> -->
                 </li>
                 <!-- <li class="nav-items" id="stopwatch-page">
                     <a href="/">Stopwatch</a>
@@ -29,6 +30,27 @@
                     <a href="/">Timer</a>
                 </li> -->
             </ul>
+        </section>
+
+        <section class="settings-box closed-settings-box">
+            <section id="main-settings">
+                <section class="inputs2">
+                    <h5>Ringtone: </h5>
+                    <select>
+                        <option value="alarm-tone" selected>default alarm-tone</option>
+                    </select>
+                </section>
+    
+                <section class="inputs2">
+                    <h5>Snooze Time: </h5>
+                    <select>
+                        <option value="5" selected >5 minutes</option>
+                    </select>
+                </section>
+
+                <button id="settings-done" onclick="closeSettings()">Done</button>
+            </section>
+
         </section>
 
     </nav>
@@ -93,7 +115,8 @@
 
     <script>
         let addAlarmBox = document.getElementById("add-alarm-box");
-
+        let settingsBoxx = document.getElementsByClassName("settings-box");
+        let settingsBox = settingsBoxx[0];
 
         function moveToggle(id){
             let buttonObj = document.getElementById(id);
@@ -163,6 +186,17 @@
             console.log("closed clicked");
 
             addAlarmBox.classList.remove("open-add-alarm");
+        }
+
+        function openAlarmSettings(){
+            settingsBox.classList.remove("closed-settings-box");
+            settingsBox.classList.add("open-settings-box");
+            
+        }
+
+        function closeSettings(){
+            settingsBox.classList.add("closed-settings-box");
+            settingsBox.classList.remove("open-settings-box");
         }
     </script>
 
